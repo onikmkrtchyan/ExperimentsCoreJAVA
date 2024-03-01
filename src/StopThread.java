@@ -17,6 +17,7 @@ class StopThread1 {
     }
 }
 
+
 // Properly synchronized cooperative thread termination
 public class StopThread {
     private static boolean stopRequested;
