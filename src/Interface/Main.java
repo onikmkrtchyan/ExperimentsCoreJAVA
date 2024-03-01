@@ -9,20 +9,20 @@ public class Main {
     }
 
     public static void main(String[] args) {
-          new Main(new Child_1()).call();
-          new Main(new Child_2()).call();
-          new Main(new Child_3()).call();
+        new Main(new Child_1()).call();
+        new Main(new Child_2()).call();
+        new Main(new Child_3()).call();
 
         System.out.println("----------------------------------------");
 
-          MainInterface mainInterface = new Child_3();
-          mainInterface.print();
+        MainInterface mainInterface = new Child_3();
+        mainInterface.print();
 
-          mainInterface = new Child_2();
-          mainInterface.print();
+        mainInterface = new Child_2();
+        mainInterface.print();
 
-          mainInterface = new Child_1();
-          mainInterface.print();
+        mainInterface = new Child_1();
+        mainInterface.print();
 
         System.out.println("----------------------------------------");
 
@@ -31,11 +31,11 @@ public class Main {
         meta(new Child_3());
     }
 
-    private static void meta(MainInterface mainInterface){
+    private static void meta(MainInterface mainInterface) {
         mainInterface.print();
     }
 
-    private void call(){
+    private void call() {
         mainInterface.print();
     }
 }

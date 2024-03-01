@@ -1,20 +1,51 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import static java.util.Arrays.asList;
+import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Interesting example done with Artak
  */
 class Main2 {
     public static void main(String[] args) {
      new Child();
+
+
+        Arrays.asList("asasas");
+
     }
 }
 
 public class Parent {
     public Parent() {
         System.out.println("Parents constructor");
-//        if (this instanceof Child) {
-//            ((Child) this).init2();
-//            System.out.println("This is child in parent constructor");
-//        }
+        if (this instanceof Child) {
+            ((Child) this).init2();
+            System.out.println("This is child in parent constructor");
+        }
         init();
+    }
+
+    volatile int a;
+
+    AtomicInteger atomicInteger = new AtomicInteger();
+
+    public Parent(int s){
+
+
+        List<?> a = new ArrayList<>();
+
+        final Object e1 = new Object();
+        List<? extends Objects> j = List.of((Objects) e1);
+
+
+        List<? super Objects> da = new ArrayList<>();
+
+
+
+        System.out.println("asdasd");
     }
 
      void init() {
@@ -24,7 +55,7 @@ public class Parent {
 
 class Child extends Parent {
      Child() {
-        super();
+        super(1);
         System.out.println("Child constructor");
         init();
     }
