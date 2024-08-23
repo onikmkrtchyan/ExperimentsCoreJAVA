@@ -1,15 +1,18 @@
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Integers {
     public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
 
-        Integer a = 1;
-        int c = 1;
+        map.put(null, "value");
+        map.put(null, "value2");
 
-        Scanner scanner = new Scanner(System.in);
-        Integer b = scanner.nextInt();
+        System.out.println(map.get(null));
 
-        System.out.println(a == b);
-        System.out.println(a==c);
+        map.put("key", null);
+        map.put("key2", null);
+
+        System.out.println("MAP " + map);
     }
 }
