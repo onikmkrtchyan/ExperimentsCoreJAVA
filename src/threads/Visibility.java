@@ -8,7 +8,7 @@ public class Visibility {
         v.function();
     }
 
-    boolean ready = false;
+    volatile boolean ready = false;
 
     void function() {
         Thread thread1 = new Thread(() -> {
@@ -16,12 +16,14 @@ public class Visibility {
             while (!ready) ;
             System.out.println("Thread 1 complete");
         });
+        thread1.setName("Thread____1");
 
         Thread thread2 = new Thread(() -> {
             System.out.println("Thread 2 started");
             ready = true;
             System.out.println("Thread 2 complete");
         });
+        thread2.setName("Thread____2");
 
         thread1.start();
         ThreadUtils.sleepRandom();
