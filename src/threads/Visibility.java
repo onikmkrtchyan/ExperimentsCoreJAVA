@@ -11,6 +11,7 @@ public class Visibility {
     // volatile boolean ready = false;
 
     void function() {
+
         Thread thread1 = new Thread(() -> {
             System.out.println("Thread 1 started");
             while (!ready) {

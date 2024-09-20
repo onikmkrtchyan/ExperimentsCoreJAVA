@@ -7,6 +7,7 @@ public class StartupWaitAndNotify {
     private static boolean initialized = false;
 
     public static void main(String[] args) throws InterruptedException {
+
         Thread guard = new Thread(() -> {
             synchronized (lock) {
                 try {
@@ -20,6 +21,7 @@ public class StartupWaitAndNotify {
                 }
             }
         });
+
         guard.setName("Guarding Thread");
 
         Thread initializer = new Thread(() -> {
@@ -38,8 +40,5 @@ public class StartupWaitAndNotify {
 		initializer.start();
         guard.start();
 
-        guard.join();
-
-        System.out.println(Thread.currentThread().getName() + ": Main program can start now");
     }
 }
